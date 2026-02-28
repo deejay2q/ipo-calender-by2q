@@ -72,6 +72,7 @@
   .event.refund { background: #3d2a00; color: #fcd34d; }
   .event.listday { background: #064e3b; color: #6ee7b7; }
   .event.transfer { background: #2d1f5e; color: #c4b5fd; }
+  .event.broker-info { background: #1a2a1a; color: #86efac; border: 1px solid #16a34a55; font-size: 0.54rem; line-height: 1.4; }
 
   /* 타임라인 */
   .timeline { background: #1a1d27; border-radius: 10px; padding: 14px 16px; border: 1px solid #2a2d3a; margin-top: 16px; }
@@ -86,6 +87,12 @@
   /* 월 패널 */
   .month-panel { display: none; }
   .month-panel.active { display: block; }
+
+  /* 이번주 주간사 배너 */
+  .weekly-banner { display: none; background: #1a1d27; border: 1px solid #a78bfa44; border-left: 3px solid #a78bfa; border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; }
+  .weekly-banner.visible { display: block; }
+  .weekly-label { font-size: 0.78rem; color: #a78bfa; font-weight: 700; margin-bottom: 6px; }
+  .weekly-brokers { font-size: 1rem; color: #fff; font-weight: 700; line-height: 1.6; letter-spacing: 0.01em; }
 
   /* 모바일 — 달력 폰트/셀 크기만 줄이기 */
   @media (max-width: 600px) {
@@ -125,6 +132,12 @@
   <div class="legend-item"><div class="dot dot-refund"></div> 환불일</div>
   <div class="legend-item"><div class="dot dot-list"></div> 상장일</div>
   <div class="legend-item"><div class="dot dot-transfer"></div> 매도금 이체</div>
+</div>
+
+<!-- 이번주 주간사 배너 (일요일에만 표시) -->
+<div class="weekly-banner" id="weeklyBanner">
+  <div class="weekly-label">🏦 이번주 주간사 정보</div>
+  <div class="weekly-brokers" id="weeklyBrokers"></div>
 </div>
 
 <!-- ===== 2월 패널 ===== -->
@@ -173,15 +186,15 @@
       <div class="calendar">
         <div class="day-header sun">일</div><div class="day-header">월</div><div class="day-header">화</div>
         <div class="day-header">수</div><div class="day-header">목</div><div class="day-header">금</div><div class="day-header sat">토</div>
-        <div class="cell" data-date="2026-02-01"><div class="date-num sun">1</div></div><div class="cell" data-date="2026-02-02"><div class="date-num">2</div></div>
+        <div class="cell" data-date="2026-02-01"><div class="date-num sun">1</div><div class="event broker-info">🏦 이번주 주간사<br>청약종목 없음</div></div><div class="cell" data-date="2026-02-02"><div class="date-num">2</div></div>
         <div class="cell" data-date="2026-02-03"><div class="date-num">3</div></div><div class="cell" data-date="2026-02-04"><div class="date-num">4</div></div>
         <div class="cell" data-date="2026-02-05"><div class="date-num">5</div></div><div class="cell" data-date="2026-02-06"><div class="date-num">6</div></div>
         <div class="cell" data-date="2026-02-07"><div class="date-num sat">7</div></div>
-        <div class="cell" data-date="2026-02-08"><div class="date-num sun">8</div></div><div class="cell" data-date="2026-02-09"><div class="date-num">9</div></div>
+        <div class="cell" data-date="2026-02-08"><div class="date-num sun">8</div><div class="event broker-info">🏦 이번주 주간사<br>청약종목 없음</div></div><div class="cell" data-date="2026-02-09"><div class="date-num">9</div></div>
         <div class="cell" data-date="2026-02-10"><div class="date-num">10</div></div><div class="cell" data-date="2026-02-11"><div class="date-num">11</div></div>
         <div class="cell" data-date="2026-02-12"><div class="date-num">12</div></div><div class="cell" data-date="2026-02-13"><div class="date-num">13</div></div>
         <div class="cell" data-date="2026-02-14"><div class="date-num sat">14</div></div>
-        <div class="cell" data-date="2026-02-15"><div class="date-num sun">15</div></div><div class="cell" data-date="2026-02-16"><div class="date-num">16</div></div>
+        <div class="cell" data-date="2026-02-15"><div class="date-num sun">15</div><div class="event broker-info">🏦 이번주 주간사<br>NH투자, 삼성, 신한투자</div></div><div class="cell" data-date="2026-02-16"><div class="date-num">16</div></div>
         <div class="cell" data-date="2026-02-17"><div class="date-num">17</div></div><div class="cell" data-date="2026-02-18"><div class="date-num">18</div></div>
         <div class="cell" data-date="2026-02-19"><div class="date-num">19</div></div>
         <div class="cell" data-date="2026-02-20">
@@ -189,7 +202,7 @@
           <div class="event subscribe">01_케이뱅크 (NH투자·삼성·신한투자) 청약 1일차</div>
         </div>
         <div class="cell" data-date="2026-02-21"><div class="date-num sat">21</div></div>
-        <div class="cell" data-date="2026-02-22"><div class="date-num sun">22</div></div>
+        <div class="cell" data-date="2026-02-22"><div class="date-num sun">22</div><div class="event broker-info">🏦 이번주 주간사<br>NH투자, 삼성, 신한투자, 미래에셋, 한국투자</div></div>
         <div class="cell" data-date="2026-02-23">
           <div class="date-num">23</div>
           <div class="event subscribe-last">01_케이뱅크 (NH투자·삼성·신한투자) 청약 2일차</div>
@@ -211,7 +224,7 @@
           <div class="event refund">03_에스팀 (한국투자) 청약금 환불</div>
         </div>
         <div class="cell" data-date="2026-02-27"><div class="date-num sat">27</div></div>
-        <div class="cell" data-date="2026-02-28"><div class="date-num sun">28</div></div>
+        <div class="cell" data-date="2026-02-28"><div class="date-num sat">28</div></div>
         <div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div>
         <div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div>
       </div>
@@ -397,7 +410,7 @@
       <div class="calendar">
         <div class="day-header sun">일</div><div class="day-header">월</div><div class="day-header">화</div>
         <div class="day-header">수</div><div class="day-header">목</div><div class="day-header">금</div><div class="day-header sat">토</div>
-        <div class="cell" data-date="2026-03-01"><div class="date-num sun">1</div></div><div class="cell" data-date="2026-03-02"><div class="date-num">2</div></div>
+        <div class="cell" data-date="2026-03-01"><div class="date-num sun">1</div><div class="event broker-info">🏦 이번주 주간사<br>한국투자</div></div><div class="cell" data-date="2026-03-02"><div class="date-num">2</div></div>
         <div class="cell" data-date="2026-03-03"><div class="date-num">3</div></div><div class="cell" data-date="2026-03-04"><div class="date-num">4</div></div>
         <div class="cell" data-date="2026-03-05">
           <div class="date-num">5</div>
@@ -410,7 +423,7 @@
           <div class="event subscribe-last">01_카나프테라퓨티스 (한국투자) 청약 2일차</div>
         </div>
         <div class="cell" data-date="2026-03-07"><div class="date-num sat">7</div></div>
-        <div class="cell" data-date="2026-03-08"><div class="date-num sun">8</div></div>
+        <div class="cell" data-date="2026-03-08"><div class="date-num sun">8</div><div class="event broker-info">🏦 이번주 주간사<br>한국투자, 신한투자</div></div>
         <div class="cell" data-date="2026-03-09">
           <div class="date-num">9</div>
           <div class="event listday">액스비스 상장</div>
@@ -432,7 +445,7 @@
         </div>
         <div class="cell" data-date="2026-03-13"><div class="date-num">13</div></div>
         <div class="cell" data-date="2026-03-14"><div class="date-num sat">14</div></div>
-        <div class="cell" data-date="2026-03-15"><div class="date-num sun">15</div></div>
+        <div class="cell" data-date="2026-03-15"><div class="date-num sun">15</div><div class="event broker-info">🏦 이번주 주간사<br>신한금융, 한국투자, 대신, NH투자, 유진투자, 유안타, KB</div></div>
         <div class="cell" data-date="2026-03-16">
           <div class="date-num">16</div>
           <div class="event refund">02_아이엠바이오로직스 (한국투자·신한투자) 청약금 환불</div>
@@ -466,7 +479,7 @@
           <div class="event refund">10_NH스팩33호 (NH투자) 청약금 환불</div>
         </div>
         <div class="cell" data-date="2026-03-21"><div class="date-num sat">21</div></div>
-        <div class="cell" data-date="2026-03-22"><div class="date-num sun">22</div></div>
+        <div class="cell" data-date="2026-03-22"><div class="date-num sun">22</div><div class="event broker-info">🏦 이번주 주간사<br>NH투자, 유진투자, 교보</div></div>
         <div class="cell" data-date="2026-03-23">
           <div class="date-num">23</div>
           <div class="event refund">05_코스모로보틱스 (유진투자·NH투자·유안타) 청약금 환불</div>
@@ -490,9 +503,9 @@
           <div class="event refund">09_엔에이치스펙11호 (NH투자) 청약금 환불</div>
           <div class="event refund">11_교보스팩20호 (교보) 청약금 환불</div>
         </div>
-        <div class="cell" data-date="2026-03-27"><div class="date-num sat">27</div></div>
-        <div class="cell" data-date="2026-03-28"><div class="date-num sun">28</div></div>
-        <div class="cell" data-date="2026-03-29"><div class="date-num">29</div></div>
+        <div class="cell" data-date="2026-03-27"><div class="date-num">27</div></div>
+        <div class="cell" data-date="2026-03-28"><div class="date-num sat">28</div></div>
+        <div class="cell" data-date="2026-03-29"><div class="date-num sun">29</div><div class="event broker-info">🏦 이번주 주간사<br>청약종목 없음</div></div>
         <div class="cell" data-date="2026-03-30"><div class="date-num">30</div></div>
         <div class="cell" data-date="2026-03-31">
           <div class="date-num">31</div>
@@ -696,6 +709,63 @@
         document.getElementById('nextBtn').disabled = current === months.length - 1;
       }
     }
+  })();
+
+  // ── 이번주 주간사 배너 (일요일에만 표시) ──────────────────────
+  (function() {
+    // 청약 일정 전체 데이터 (시작일, 종료일, 주간사)
+    const schedules = [
+      { from: '2026-02-20', to: '2026-02-23', brokers: ['NH투자'] },
+      { from: '2026-02-23', to: '2026-02-24', brokers: ['미래에셋'] },
+      { from: '2026-02-23', to: '2026-02-24', brokers: ['한국투자'] },
+      { from: '2026-03-05', to: '2026-03-06', brokers: ['한국투자'] },
+      { from: '2026-03-11', to: '2026-03-12', brokers: ['한국투자', '신한투자'] },
+      { from: '2026-03-16', to: '2026-03-17', brokers: ['신한금융'] },
+      { from: '2026-03-16', to: '2026-03-17', brokers: ['한국투자', '대신'] },
+      { from: '2026-03-17', to: '2026-03-18', brokers: ['NH투자'] },
+      { from: '2026-03-18', to: '2026-03-19', brokers: ['유진투자', 'NH투자', '유안타'] },
+      { from: '2026-03-19', to: '2026-03-20', brokers: ['한국투자', 'KB'] },
+      { from: '2026-03-19', to: '2026-03-20', brokers: ['신한금융'] },
+      { from: '2026-03-23', to: '2026-03-24', brokers: ['NH투자', '유진투자'] },
+      { from: '2026-03-23', to: '2026-03-24', brokers: ['교보'] },
+    ];
+
+    const today = new Date();
+    const dow = today.getDay(); // 0=일
+
+    // 일요일에만 표시
+    if (dow !== 0) return;
+
+    // 이번주 월(+1일)~금(+5일) 범위 계산
+    const fmt = d => {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      return y + '-' + m + '-' + dd;
+    };
+
+    const mon = new Date(today); mon.setDate(today.getDate() + 1);
+    const fri = new Date(today); fri.setDate(today.getDate() + 5);
+    const monStr = fmt(mon);
+    const friStr = fmt(fri);
+
+    // 이번주 월~금 사이에 청약 기간이 겹치는 종목의 주간사 수집
+    const brokerSet = new Set();
+    schedules.forEach(s => {
+      // 겹침 조건: 청약 시작일 <= 금요일 AND 청약 종료일 >= 월요일
+      if (s.from <= friStr && s.to >= monStr) {
+        s.brokers.forEach(b => brokerSet.add(b));
+      }
+    });
+
+    if (brokerSet.size === 0) return;
+
+    // 표시 — 양식: "이번주 주간사 정보\n한국투자, 신한투자, 대신"
+    const banner = document.getElementById('weeklyBanner');
+    const brokersEl = document.getElementById('weeklyBrokers');
+
+    brokersEl.textContent = [...brokerSet].join(', ');
+    banner.classList.add('visible');
   })();
 </script>
 </body>
