@@ -31,7 +31,10 @@
   /* 종목 카드 */
   .section-label { font-size: 0.85rem; font-weight: 700; color: #a78bfa; margin-bottom: 10px; padding-left: 4px; }
   .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-bottom: 20px; }
-  .card { background: #1a1d27; border-radius: 10px; padding: 12px 14px; border: 1px solid #2a2d3a; }
+  .card { background: #1a1d27; border-radius: 10px; padding: 12px 14px; border: 1px solid #2a2d3a; transition: border-color 0.2s, box-shadow 0.2s; }
+  .card.today-subscribe { border: 2px solid #ef4444; box-shadow: 0 0 10px #ef444440; }
+  .card.today-list      { border: 2px solid #10b981; box-shadow: 0 0 10px #10b98140; }
+  .card.today-refund    { border: 2px solid #f59e0b; box-shadow: 0 0 10px #f59e0b40; }
   .card-name { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .badge { font-size: 0.6rem; padding: 2px 6px; border-radius: 10px; font-weight: 600; }
   .badge.kospi { background: #1e3a5f; color: #93c5fd; }
@@ -117,7 +120,7 @@
 </head>
 <body>
 
-<h1>📅 2026년 공모청약 일정 <span style="font-size:0.75rem; color:#a78bfa; font-weight:500;">(26.03.05 updated)</span></h1>
+<h1>📅 2026년 공모청약 일정 <span style="font-size:0.75rem; color:#a78bfa; font-weight:500;">(26.03.10 updated)</span></h1>
 <p class="subtitle">IPO 청약 캘린더 — 청약일 · 환불일 · 상장일 · 매도금 이체가능일</p>
 
 <div class="month-nav">
@@ -144,7 +147,7 @@
 <div class="month-panel active" id="panel-0">
   <div class="section-label">📋 2월 청약 종목</div>
   <div class="stock-grid">
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-02-20" data-subscribe-to="2026-02-23" data-refund="2026-02-25" data-listday="2026-03-05">
       <div class="card-name">01_케이뱅크 <span class="badge kospi">유가증권</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">02.20(금) ~ 02.23(월)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">8,300 ~ 9,500원</span></div>
@@ -155,7 +158,7 @@
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value" style="color:#c4b5fd;">03.09(월)</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">NH투자 · 삼성 · 신한투자</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-02-23" data-subscribe-to="2026-02-24" data-refund="2026-02-26" data-listday="2026-03-09">
       <div class="card-name">02_액스비스 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">02.23(월) ~ 02.24(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">10,100 ~ 11,500원</span></div>
@@ -166,7 +169,7 @@
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value" style="color:#c4b5fd;">03.11(수)</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">미래에셋</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-02-23" data-subscribe-to="2026-02-24" data-refund="2026-02-26" data-listday="2026-03-06">
       <div class="card-name">03_에스팀 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">02.23(월) ~ 02.24(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">7,000 ~ 8,500원</span></div>
@@ -284,121 +287,147 @@
 <div class="month-panel" id="panel-1">
   <div class="section-label">📋 3월 청약 종목</div>
   <div class="stock-grid">
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-05" data-subscribe-to="2026-03-06" data-refund="2026-03-10" data-listday="2026-03-17">
       <div class="card-name">01_카나프테라퓨티스 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.05(목) ~ 03.06(금)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">16,000 ~ 20,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value">20,000원</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value">400억원</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value" style="color:#f9a8d4;">962.10 : 1</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value" style="color:#fb923c;">76.10%</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.10(화)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value green">03.17(화)</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">한국투자</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-11" data-subscribe-to="2026-03-12" data-refund="2026-03-16" data-listday="2026-03-20">
       <div class="card-name">02_아이엠바이오로직스 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.11(수) ~ 03.12(목)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">19,000 ~ 26,000원</span></div>
-      <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
-      <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value">26,000원</span></div>
+      <div class="card-row"><span class="card-label">공모금액</span><span class="card-value">520억원</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value" style="color:#f9a8d4;">839.23 : 1</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value" style="color:#fb923c;">76.01%</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.16(월)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value green">03.20(금)</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">한국투자·신한투자</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-16" data-subscribe-to="2026-03-17" data-refund="2026-03-19" data-listday="2026-03-26">
       <div class="card-name">03_메쥬 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.16(월) ~ 03.17(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">16,700 ~ 21,600원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.19(목)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value green">03.26(목)</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">신한금융</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-16" data-subscribe-to="2026-03-17" data-refund="2026-03-19">
       <div class="card-name">04_한패스 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.16(월) ~ 03.17(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">17,000 ~ 19,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.19(목)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">한국투자·대신</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-18" data-subscribe-to="2026-03-19" data-refund="2026-03-23">
       <div class="card-name">05_코스모로보틱스 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.18(수) ~ 03.19(목)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">5,300 ~ 6,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.23(월)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">유진투자·NH투자·유안타</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-19" data-subscribe-to="2026-03-20" data-refund="2026-03-24" data-listday="2026-03-31">
       <div class="card-name">06_리센스메디컬 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.19(목) ~ 03.20(금)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">9,000 ~ 11,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.24(화)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value green">03.31(화)</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">한국투자·KB</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-19" data-subscribe-to="2026-03-20" data-refund="2026-03-24">
       <div class="card-name">07_신한제17호스팩 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.19(목) ~ 03.20(금)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">2,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.24(화)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">신한금융</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-23" data-subscribe-to="2026-03-24" data-refund="2026-03-26">
       <div class="card-name">08_인벤테라 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.23(월) ~ 03.24(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">12,100 ~ 16,600원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.26(목)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">NH투자·유진투자</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-23" data-subscribe-to="2026-03-24" data-refund="2026-03-26">
       <div class="card-name">09_엔에이치스펙11호 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.23(월) ~ 03.24(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">2,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.26(목)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">NH투자</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-17" data-subscribe-to="2026-03-18" data-refund="2026-03-20">
       <div class="card-name">10_NH스팩33호 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.17(화) ~ 03.18(수)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">2,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.20(금)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">NH투자</span></div>
     </div>
-    <div class="card">
+    <div class="card" data-subscribe-from="2026-03-23" data-subscribe-to="2026-03-24" data-refund="2026-03-26">
       <div class="card-name">11_교보스팩20호 <span class="badge kosdaq">코스닥</span></div>
       <div class="card-row"><span class="card-label">청약기간</span><span class="card-value blue">03.23(월) ~ 03.24(화)</span></div>
       <div class="card-row"><span class="card-label">희망공모가</span><span class="card-value">2,000원</span></div>
       <div class="card-row"><span class="card-label">확정공모가</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">공모금액</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">기관경쟁률</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">의무보유확약</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">환불일</span><span class="card-value yellow">03.26(목)</span></div>
       <div class="card-row"><span class="card-label">상장일</span><span class="card-value gray">미정</span></div>
+      <div class="card-row"><span class="card-label">매도금 이체</span><span class="card-value gray">미정</span></div>
       <div class="card-row"><span class="card-label">주간사</span><span class="card-value">교보</span></div>
     </div>
   </div>
@@ -647,7 +676,7 @@
     <div class="tl-row"><span class="tl-date">03.06</span><span class="tl-content"><b>에스팀 상장</b> | 01_카나프테라퓨티스 (한국투자) 청약 2일차</span></div>
     <div class="tl-row"><span class="tl-date">03.09</span><span class="tl-content"><b>액스비스 상장</b> | 💜 01_케이뱅크 (NH투자·삼성·신한투자) 매도금 이체가능</span></div>
     <div class="tl-row"><span class="tl-date">03.10</span><span class="tl-content">01_카나프테라퓨티스 (한국투자) 청약금 환불 | 💜 03_에스팀 (한국투자) 매도금 이체가능</span></div>
-    <div class="tl-row"><span class="tl-date">03.11</span><span class="tl-content">02_<b>아이엠바이오로직스</b> (한국투자·신한투자) 청약 1일차 <span class="tl-sub">(19,000~26,000원)</span> | 💜 02_액스비스 (미래에셋) 매도금 이체가능</span></div>
+    <div class="tl-row"><span class="tl-date">03.11</span><span class="tl-content">02_<b>아이엠바이오로직스</b> (한국투자·신한투자) 청약 1일차 <span class="tl-sub">(확정공모가 26,000원 | 기관경쟁률 839:1 | 의무보유확약 76.01%)</span> | 💜 02_액스비스 (미래에셋) 매도금 이체가능</span></div>
     <div class="tl-row"><span class="tl-date">03.12</span><span class="tl-content">02_아이엠바이오로직스 (한국투자·신한투자) 청약 2일차</span></div>
     <div class="tl-row"><span class="tl-date">03.16</span><span class="tl-content">02_아이엠바이오로직스 (한국투자·신한투자) 청약금 환불 | 03_<b>메쥬</b> (신한금융) 청약 1일차 | 04_<b>한패스</b> (한국투자·대신) 청약 1일차</span></div>
     <div class="tl-row"><span class="tl-date">03.17</span><span class="tl-content"><b>카나프테라퓨티스 상장</b> | 03_메쥬 (신한금융) 청약 2일차 | 04_한패스 (한국투자·대신) 청약 2일차 | 10_<b>NH스팩33호</b> (NH투자) 청약 1일차</span></div>
@@ -662,6 +691,31 @@
 </div>
 
 <script>
+  // ── 카드 테두리 하이라이트 (청약중=빨강, 상장일=초록, 환불일=노랑) ──
+  (function () {
+    const t = new Date();
+    const y = t.getFullYear();
+    const m = String(t.getMonth() + 1).padStart(2, '0');
+    const d = String(t.getDate()).padStart(2, '0');
+    const today = y + '-' + m + '-' + d;
+
+    document.querySelectorAll('.card[data-subscribe-from]').forEach(card => {
+      const from    = card.dataset.subscribeFrom;
+      const to      = card.dataset.subscribeTo;
+      const refund  = card.dataset.refund;
+      const listday = card.dataset.listday;
+
+      // 우선순위: 청약중 > 상장일 > 환불일
+      if (from && to && today >= from && today <= to) {
+        card.classList.add('today-subscribe');
+      } else if (listday && today === listday) {
+        card.classList.add('today-list');
+      } else if (refund && today === refund) {
+        card.classList.add('today-refund');
+      }
+    });
+  })();
+
   // ── 월 네비게이션 ──────────────────────────────
   const months = ['2026년 2월', '2026년 3월'];
   let current = 0;
