@@ -77,6 +77,12 @@
   .event.transfer { background: #2d1f5e; color: #c4b5fd; }
   .event.broker-info { background: #1a2a1a; color: #86efac; border: 1px solid #16a34a55; font-size: 0.54rem; line-height: 1.4; }
 
+  .tl-row.tl-past { opacity: 0.45; }
+  .tl-row.tl-past .tl-date,
+  .tl-row.tl-past .tl-content { text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 1.5px; color: #666; }
+  .tl-row.tl-past .tl-content b { color: #666; }
+  .tl-row.tl-past .tl-content .tl-sub { color: #555; }
+
   /* 타임라인 */
   .timeline { background: #1a1d27; border-radius: 10px; padding: 14px 16px; border: 1px solid #2a2d3a; margin-top: 16px; }
   .tl-title { font-size: 0.88rem; font-weight: 700; color: #a78bfa; margin-bottom: 12px; }
@@ -672,25 +678,40 @@
   <!-- 3월 타임라인 -->
   <div class="timeline">
     <div class="tl-title">📌 3월 일정 타임라인</div>
-    <div class="tl-row"><span class="tl-date">03.05</span><span class="tl-content"><b>케이뱅크 상장</b> | 01_<b>카나프테라퓨티스</b> (한국투자) 청약 1일차 <span class="tl-sub">(확정공모가 20,000원)</span></span></div>
-    <div class="tl-row"><span class="tl-date">03.06</span><span class="tl-content"><b>에스팀 상장</b> | 01_카나프테라퓨티스 (한국투자) 청약 2일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.09</span><span class="tl-content"><b>액스비스 상장</b> | 💜 01_케이뱅크 (NH투자·삼성·신한투자) 매도금 이체가능</span></div>
-    <div class="tl-row"><span class="tl-date">03.10</span><span class="tl-content">01_카나프테라퓨티스 (한국투자) 청약금 환불 | 💜 03_에스팀 (한국투자) 매도금 이체가능</span></div>
-    <div class="tl-row"><span class="tl-date">03.11</span><span class="tl-content">02_<b>아이엠바이오로직스</b> (한국투자·신한투자) 청약 1일차 <span class="tl-sub">(확정공모가 26,000원 | 기관경쟁률 839:1 | 의무보유확약 76.01%)</span> | 💜 02_액스비스 (미래에셋) 매도금 이체가능</span></div>
-    <div class="tl-row"><span class="tl-date">03.12</span><span class="tl-content">02_아이엠바이오로직스 (한국투자·신한투자) 청약 2일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.16</span><span class="tl-content">02_아이엠바이오로직스 (한국투자·신한투자) 청약금 환불 | 03_<b>메쥬</b> (신한금융) 청약 1일차 | 04_<b>한패스</b> (한국투자·대신) 청약 1일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.17</span><span class="tl-content"><b>카나프테라퓨티스 상장</b> | 03_메쥬 (신한금융) 청약 2일차 | 04_한패스 (한국투자·대신) 청약 2일차 | 10_<b>NH스팩33호</b> (NH투자) 청약 1일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.18</span><span class="tl-content">05_<b>코스모로보틱스</b> (유진투자·NH투자·유안타) 청약 1일차 <span class="tl-sub">(5,300~6,000원)</span> | 10_NH스팩33호 (NH투자) 청약 2일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.19</span><span class="tl-content">03_메쥬 청약금 환불 | 04_한패스 청약금 환불 | 05_코스모로보틱스 청약 2일차 | 06_<b>리센스메디컬</b> (한국투자·KB) 청약 1일차 | 07_<b>신한제17호스팩</b> (신한금융) 청약 1일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.20</span><span class="tl-content">06_리센스메디컬 (한국투자·KB) 청약 2일차 | 07_신한제17호스팩 (신한금융) 청약 2일차 | <b>아이엠바이오로직스 상장</b> | 10_NH스팩33호 (NH투자) 청약금 환불</span></div>
-    <div class="tl-row"><span class="tl-date">03.23</span><span class="tl-content">05_코스모로보틱스 청약금 환불 | 08_<b>인벤테라</b> (NH투자·유진투자) 청약 1일차 <span class="tl-sub">(12,100~16,600원)</span> | 09_<b>엔에이치스펙11호</b> (NH투자) 청약 1일차 | 11_<b>교보스팩20호</b> (교보) 청약 1일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.24</span><span class="tl-content">06_리센스메디컬 청약금 환불 | 07_신한제17호스팩 청약금 환불 | 08_인벤테라 청약 2일차 | 09_엔에이치스펙11호 청약 2일차 | 11_교보스팩20호 (교보) 청약 2일차</span></div>
-    <div class="tl-row"><span class="tl-date">03.26</span><span class="tl-content"><b>메쥬 상장</b> | 08_인벤테라 (NH투자·유진투자) 청약금 환불 | 09_엔에이치스펙11호 (NH투자) 청약금 환불 | 11_교보스팩20호 (교보) 청약금 환불</span></div>
-    <div class="tl-row"><span class="tl-date">03.31</span><span class="tl-content"><b>리센스메디컬 상장</b></span></div>
+    <div class="tl-row" data-tl-date="2026-03-05"><span class="tl-date">03.05</span><span class="tl-content"><b>케이뱅크 상장</b> | 01_<b>카나프테라퓨티스</b> (한국투자) 청약 1일차 <span class="tl-sub">(확정공모가 20,000원)</span></span></div>
+    <div class="tl-row" data-tl-date="2026-03-06"><span class="tl-date">03.06</span><span class="tl-content"><b>에스팀 상장</b> | 01_카나프테라퓨티스 (한국투자) 청약 2일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-09"><span class="tl-date">03.09</span><span class="tl-content"><b>액스비스 상장</b> | 💜 01_케이뱅크 (NH투자·삼성·신한투자) 매도금 이체가능</span></div>
+    <div class="tl-row" data-tl-date="2026-03-10"><span class="tl-date">03.10</span><span class="tl-content">01_카나프테라퓨티스 (한국투자) 청약금 환불 | 💜 03_에스팀 (한국투자) 매도금 이체가능</span></div>
+    <div class="tl-row" data-tl-date="2026-03-11"><span class="tl-date">03.11</span><span class="tl-content">02_<b>아이엠바이오로직스</b> (한국투자·신한투자) 청약 1일차 <span class="tl-sub">(확정공모가 26,000원 | 기관경쟁률 839:1 | 의무보유확약 76.01%)</span> | 💜 02_액스비스 (미래에셋) 매도금 이체가능</span></div>
+    <div class="tl-row" data-tl-date="2026-03-12"><span class="tl-date">03.12</span><span class="tl-content">02_아이엠바이오로직스 (한국투자·신한투자) 청약 2일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-16"><span class="tl-date">03.16</span><span class="tl-content">02_아이엠바이오로직스 (한국투자·신한투자) 청약금 환불 | 03_<b>메쥬</b> (신한금융) 청약 1일차 | 04_<b>한패스</b> (한국투자·대신) 청약 1일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-17"><span class="tl-date">03.17</span><span class="tl-content"><b>카나프테라퓨티스 상장</b> | 03_메쥬 (신한금융) 청약 2일차 | 04_한패스 (한국투자·대신) 청약 2일차 | 10_<b>NH스팩33호</b> (NH투자) 청약 1일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-18"><span class="tl-date">03.18</span><span class="tl-content">05_<b>코스모로보틱스</b> (유진투자·NH투자·유안타) 청약 1일차 <span class="tl-sub">(5,300~6,000원)</span> | 10_NH스팩33호 (NH투자) 청약 2일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-19"><span class="tl-date">03.19</span><span class="tl-content">03_메쥬 청약금 환불 | 04_한패스 청약금 환불 | 05_코스모로보틱스 청약 2일차 | 06_<b>리센스메디컬</b> (한국투자·KB) 청약 1일차 | 07_<b>신한제17호스팩</b> (신한금융) 청약 1일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-20"><span class="tl-date">03.20</span><span class="tl-content">06_리센스메디컬 (한국투자·KB) 청약 2일차 | 07_신한제17호스팩 (신한금융) 청약 2일차 | <b>아이엠바이오로직스 상장</b> | 10_NH스팩33호 (NH투자) 청약금 환불</span></div>
+    <div class="tl-row" data-tl-date="2026-03-23"><span class="tl-date">03.23</span><span class="tl-content">05_코스모로보틱스 청약금 환불 | 08_<b>인벤테라</b> (NH투자·유진투자) 청약 1일차 <span class="tl-sub">(12,100~16,600원)</span> | 09_<b>엔에이치스펙11호</b> (NH투자) 청약 1일차 | 11_<b>교보스팩20호</b> (교보) 청약 1일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-24"><span class="tl-date">03.24</span><span class="tl-content">06_리센스메디컬 청약금 환불 | 07_신한제17호스팩 청약금 환불 | 08_인벤테라 청약 2일차 | 09_엔에이치스펙11호 청약 2일차 | 11_교보스팩20호 (교보) 청약 2일차</span></div>
+    <div class="tl-row" data-tl-date="2026-03-26"><span class="tl-date">03.26</span><span class="tl-content"><b>메쥬 상장</b> | 08_인벤테라 (NH투자·유진투자) 청약금 환불 | 09_엔에이치스펙11호 (NH투자) 청약금 환불 | 11_교보스팩20호 (교보) 청약금 환불</span></div>
+    <div class="tl-row" data-tl-date="2026-03-31"><span class="tl-date">03.31</span><span class="tl-content"><b>리센스메디컬 상장</b></span></div>
   </div>
 </div>
 
 <script>
+  // ── 타임라인 과거 날짜 취소선 ────────────────────
+  (function () {
+    const t = new Date();
+    const y = t.getFullYear();
+    const m = String(t.getMonth() + 1).padStart(2, '0');
+    const d = String(t.getDate()).padStart(2, '0');
+    const today = y + '-' + m + '-' + d;
+
+    document.querySelectorAll('.tl-row[data-tl-date]').forEach(row => {
+      if (row.dataset.tlDate < today) {
+        row.classList.add('tl-past');
+      }
+    });
+  })();
+
   // ── 카드 테두리 하이라이트 (청약중=빨강, 상장일=초록, 환불일=노랑) ──
   (function () {
     const t = new Date();
