@@ -459,17 +459,17 @@
         <div class="cell" data-date="2026-03-09">
           <div class="date-num">9</div>
           <div class="event listday">액스비스 상장 <span style="opacity:0.75;font-weight:400;">(미래에셋)</span></div>
-          <div class="event transfer">01_케이뱅크 (NH투자·삼성·신한투자) 매도금 이체가능</div>
+
         </div>
         <div class="cell" data-date="2026-03-10">
           <div class="date-num">10</div>
           <div class="event refund">01_카나프테라퓨티스 (한국투자) 청약금 환불</div>
-          <div class="event transfer">03_에스팀 (한국투자) 매도금 이체가능</div>
+
         </div>
         <div class="cell" data-date="2026-03-11">
           <div class="date-num">11</div>
           <div class="event subscribe">02_아이엠바이오로직스 (한국투자·신한투자) 청약 1일차</div>
-          <div class="event transfer">02_액스비스 (미래에셋) 매도금 이체가능</div>
+
         </div>
         <div class="cell" data-date="2026-03-12">
           <div class="date-num">12</div>
@@ -791,13 +791,16 @@
 
   // ── 매도금 이체 이벤트 캘린더 표시 ──────────────────────
   (function() {
-    // 카드의 매도금 이체 데이터 추출
+    // 카드의 매도금 이체 데이터 추출 (주간사 포함)
     const transfers = [];
     document.querySelectorAll('.card[data-transfer]').forEach(card => {
       const transferDate = card.dataset.transfer;
       const cardName = card.querySelector('.card-name').textContent.trim();
+      const brokerRow = Array.from(card.querySelectorAll('.card-row'))
+        .find(row => row.querySelector('.card-label') && row.querySelector('.card-label').textContent.trim() === '주간사');
+      const broker = brokerRow ? brokerRow.querySelector('.card-value').textContent.trim() : '';
       if (transferDate && transferDate !== '-') {
-        transfers.push({ date: transferDate, name: cardName });
+        transfers.push({ date: transferDate, name: cardName, broker });
       }
     });
 
@@ -807,7 +810,7 @@
       if (cell) {
         const event = document.createElement('div');
         event.className = 'event transfer';
-        event.textContent = transfer.name + ' 매도금 이체가능';
+        event.textContent = transfer.name + (transfer.broker ? ' (' + transfer.broker + ')' : '') + ' 매도금 이체가능';
         cell.appendChild(event);
       }
     });
